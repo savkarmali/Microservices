@@ -2,6 +2,8 @@ server:
     port: 8083
 #    servlet:
 #        context-path: /springDataJpaDemo
+
+#DB properties
 spring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
@@ -12,3 +14,24 @@ spring:
         database-platform: org.hibernate.dialect.MySQL5Dialect
         hibernate:
             ddl-auto: update
+
+#Actuator properties
+management:
+   endpoint:
+      health:
+         show-details: always
+   endpoints:
+      web:
+         base-path: /userApp
+         exposure:
+            include: '*'
+info:
+   app:
+      encoding: UTF-8
+      java:
+         source: 1.8
+         target: 1.8   
+   name:
+       of:
+          app: spring boot jpa application     
+                         
